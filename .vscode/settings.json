@@ -1,0 +1,12 @@
+{
+    "files.associations": {
+        "komihash.h": "c",
+        "hashmap.h": "c",
+        "stdint.h": "c",
+        "uthash.h": "c",
+        "ctype.h": "c",
+        "aho.h": "c",
+        "string_handling.h": "c",
+        "file_handling.h": "c"
+    }
+}
