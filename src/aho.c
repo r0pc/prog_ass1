@@ -101,7 +101,7 @@ void ac_free(ACNode* root) {
         }
 
         if (node->output && node->output_f) {
-                free(node->output);
+            free(node->output);
         }
 
         free(node);

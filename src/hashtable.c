@@ -86,10 +86,10 @@ int sort_val_desc(HashItem* a, HashItem* b) {
     return b->value - a->value;
 }
 
-char* enum_to_str(ItemType itemtype){
-    if(itemtype == SEVERE) return "Severe";
-    if(itemtype == MILD) return "Mild";
-    if(itemtype == UNIQUE) return "Unique";
+char* enum_to_str(ItemType itemtype) {
+    if (itemtype == SEVERE) return "Severe";
+    if (itemtype == MILD) return "Mild";
+    if (itemtype == UNIQUE) return "Unique";
     return "err";
 }
 
@@ -172,7 +172,7 @@ int get_num_unique_gtz(HashItem* table) {
     HashItem* item, * tmp;
     int c = 0;
     HASH_ITER(hh, table, item, tmp) {
-        if(item->value > 0){
+        if (item->value > 0) {
             c++;
         }
     }
@@ -182,10 +182,10 @@ void num_unique_gtz_grp(HashItem* table) {
     HashItem* item, * tmp;
     int c = 0;
     HASH_ITER(hh, table, item, tmp) {
-        if(item->value > 0){
+        if (item->value > 0) {
             ss.toxic_unique++;
-            if(item->itemtype == SEVERE) ss.severe_unique++;
-            if(item->itemtype == MILD) ss.mild_unique++;
+            if (item->itemtype == SEVERE) ss.severe_unique++;
+            if (item->itemtype == MILD) ss.mild_unique++;
         }
     }
 

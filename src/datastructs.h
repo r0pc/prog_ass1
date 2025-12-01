@@ -4,14 +4,24 @@
 #include "uthash.h"
 #define ALPHABET 256
 
+// this file contains all the structs definations used
+
+
+// ACNode used in Aho crosaick algo, substring searching
+// ALPHABET is 256, to capture all ascii characters
+// next ptr arr to create trie datastruct
+// fail ptr used to create fail links for algo
+// int output_f is used as a boolean to check whether this node has a value on it when freeing
+// output is the string used as key in hashmap
+
 typedef struct ACNode {
-    struct ACNode *next[ALPHABET];
-    struct ACNode *fail;
-    char *output;    
-    int output_f;        
+    struct ACNode* next[ALPHABET];
+    struct ACNode* fail;
+    char* output;
+    int output_f;
 } ACNode;
 
-typedef enum{
+typedef enum {
     NONE,
     MILD,
     MODERATE,
@@ -27,7 +37,7 @@ typedef struct {
     UT_hash_handle hh;
 } HashItem;
 
-typedef struct{
+typedef struct {
     int val;
     char key[256];
     ItemType itemtype;

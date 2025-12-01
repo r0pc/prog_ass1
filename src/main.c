@@ -5,11 +5,17 @@
 #include "string_handling.h"
 #include "file_handling.h"
 
-const char* filename_main = "data/chatlogs.csv";
+
+// initiliase hashtables
+// table = toxic dictionary
+// table1 = stopwords
+// table2 = temporary unique words dictionary
 HashItem* table = NULL;
 HashItem* table1 = NULL;
 HashItem* table2 = NULL;
 
+
+// function definitions
 void out_general();
 void out_top_n();
 int get_choice1();
@@ -20,6 +26,8 @@ void reset_ss();
 
 int main() {
 
+    // load toxic words dictionary with words from severe_words.txt and mild_words.txt
+    // load stopwords dictionary with words from stopword.txt
     printf("Loading severe_words.txt...\n");
     load_toxic(&table, "data/severe_words.txt");
     printf("Loading mild_words.txt...\n");
@@ -27,24 +35,38 @@ int main() {
     printf("loading stop_word.txt\n");
     load_toxic(&table1, "data/stopword.txt");
 
+    // build aho trie
     printf("Building Aho trie...\n\n");
     ACNode* automation = ac_build(table);
 
+    // infinite loop
     while (1) {
+        // if get_choice returns 0 then break
         if (!get_choice1()) break;
+
+        // getting file for input analysis, analyse file
         process_file(automation, table);
+
+        // get num unique words
         ss.num_unique = get_num_elements(table2);
+        // get num unique toxic words, mild words, severe words
         num_unique_gtz_grp(table);
+
+        // choose between analyse new file, general stats, output top n, output to file
         get_choice2();
 
+        // reset all items in dictionary table to 0
         reset_table(table);
+        
+        // free all items in dictionary table2
         free_table(&table2);
+
+        // reset values in struct ss
         reset_ss();
     }
 
-    // printf("clearing hash tale...\n");
-    // reset_table(table);
 
+    // free and exit
     printf("freeing Aho trie...\n");
     ac_free(automation);
     printf("freeing toxic words table...\n");
@@ -58,7 +80,8 @@ int main() {
     return 0;
 }
 
-void reset_ss(){
+
+void reset_ss() {
     strcpy(ss.filename, "");
     ss.mild_total = 0;
     ss.mild_unique = 0;
@@ -68,17 +91,20 @@ void reset_ss(){
     ss.severe_unique = 0;
     ss.total_length = 0;
     ss.toxic_unique = 0;
-    ss.word_count = 0;    
+    ss.word_count = 0;
 }
 
 
-
+// prints stringstats / general stats
 void out_general() {
     printf("\nGeneral Statistics:\n");
     print_stringstats();
     printf("\n");
 }
 
+
+// gets input n
+// sorts dictionary, outputs top n
 void out_top_n() {
     int n;
     printf("Input n: ");
@@ -90,6 +116,7 @@ void out_top_n() {
     printf("\n");
 }
 
+// gets input from user, if 0 then exit, if 1 then analyse a file
 int get_choice1() {
     int c1;
     printf("0. Exit the program\n");
@@ -107,14 +134,14 @@ int get_choice1() {
     return c1;
 }
 
+// get number of record for outputting to file
 int get_next_record_num() {
     FILE* f = fopen("output.txt", "r");
-    if (!f) return 1; // File doesn't exist yet, start at 1
+    if (!f) return 1; 
 
     int count = 0;
     char line[512];
     while (fgets(line, sizeof(line), f)) {
-        // Check if the line starts with "Record"
         if (strncmp(line, "Record", 6) == 0) {
             count++;
         }
@@ -123,7 +150,10 @@ int get_next_record_num() {
     return count + 1;
 }
 
-void create_outfile(){
+
+// appends to output.txt the current analysis of the file,
+// outputs the file name, general stats (string stats) and top 10 toxic words found
+void create_outfile() {
     int record_num = get_next_record_num();
 
     FILE* fptr = fopen("output.txt", "a");
@@ -135,11 +165,11 @@ void create_outfile(){
     fprintf(fptr, "Record %d: %s\n", record_num, ss.filename);
     fprintf(fptr, "------------------------------------------------\n");
 
-    float avg_word_precord = (float) ss.word_count / ss.num_records;
-    float avg_word_len = (float) ss.total_length / ss.word_count;
+    float avg_word_precord = (float)ss.word_count / ss.num_records;
+    float avg_word_len = (float)ss.total_length / ss.word_count;
     float ratio_w = (float)ss.num_unique / ss.word_count;
-    float ratio_ts = (float)ss.severe_unique/ss.toxic_unique;
-    float ratio_tm = (float)ss.mild_unique/ss.toxic_unique;
+    float ratio_ts = (float)ss.severe_unique / ss.toxic_unique;
+    float ratio_tm = (float)ss.mild_unique / ss.toxic_unique;
 
     fprintf(fptr, "StringStats:\n");
     fprintf(fptr, "Total Number of Words(excluding stopwords): %d\n", ss.word_count);
@@ -179,6 +209,11 @@ void create_outfile(){
     fclose(fptr);
 }
 
+// get input from user
+// if input == 0 then analyse a new file
+// if input == 1 then output general stats
+// if input == 2 then output top n]
+// if input == 3 then append to output.txt 
 void get_choice2() {
     int c2 = -1;
     printf("\n0. Analyse a new file\n");

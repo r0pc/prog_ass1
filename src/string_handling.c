@@ -101,11 +101,11 @@ void process_string(ACNode* automation, HashItem* table, char* s) {
 }
 
 void print_stringstats() {
-    float avg_word_precord = (float) ss.word_count / ss.num_records;
-    float avg_word_len = (float) ss.total_length / ss.word_count;
+    float avg_word_precord = (float)ss.word_count / ss.num_records;
+    float avg_word_len = (float)ss.total_length / ss.word_count;
     float ratio_w = (float)ss.num_unique / ss.word_count;
-    float ratio_ts = (float)ss.severe_unique/ss.toxic_unique;
-    float ratio_tm = (float)ss.mild_unique/ss.toxic_unique;
+    float ratio_ts = (float)ss.severe_unique / ss.toxic_unique;
+    float ratio_tm = (float)ss.mild_unique / ss.toxic_unique;
 
     printf("Total Number of Words(excluding stopwords): %d\n", ss.word_count);
     printf("Total Number of Characters(excluding stopwords): %d\n", ss.total_length);

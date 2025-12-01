@@ -8,7 +8,7 @@
 #include "string_handling.h"
 #include "file_handling.h"
 
-FILE* get_file(int *filetype) {
+FILE* get_file(int* filetype) {
     char buff[64];
     FILE* fptr;
     while (1) {
@@ -132,15 +132,17 @@ void read_csv(FILE* fptr, ACNode* automation, HashItem* table) {
 
 
 
-void process_file(ACNode *automation, HashItem *table){
+void process_file(ACNode* automation, HashItem* table) {
     int filetype = 0;
     FILE* fptr = get_file(&filetype);
     printf("Processing File...\n");
-    if(filetype == 1){
+    if (filetype == 1) {
         read_txt(fptr, automation, table);
-    }else if(filetype == 2){
+    }
+    else if (filetype == 2) {
         read_csv(fptr, automation, table);
-    } else{
+    }
+    else {
         perror("invalid file type, terminating program");
         exit(EXIT_FAILURE);
     }
