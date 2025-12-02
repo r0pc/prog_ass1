@@ -24,4 +24,6 @@ void reset_table(HashItem* table);
 int get_num_elements(HashItem* table);
 int get_num_unique_gtz(HashItem* table);
 void num_unique_gtz_grp(HashItem* table);
+char* enum_to_str(ItemType itemtype);
+void fprintf_top_n(Item* arr, int n, FILE *fptr);
 #endif

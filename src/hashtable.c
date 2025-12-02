@@ -132,8 +132,36 @@ Item* get_top_n(HashItem** table, int n) {
 
 // prints top n
 void print_top_n(Item* arr, int n) {
+    char bar[] = "##################################################";
+    int highest = arr[0].val;
+    int bar_len = strlen(bar);
+    printf("%-4s| %-15s | %-7s| %-8s | %s\n", "Rank", "Word", "Count", "Severity", "Graph");
+
+    printf("----|-----------------|--------|----------|--------------------\n");
     for (int i = 0; i < n; i++) {
-        printf("%d. %s -> %d -> %s\n", i + 1, arr[i].key, arr[i].val, enum_to_str(arr[i].itemtype));
+        printf("%-3d | %-15s | %6d | %8s | ", i + 1, arr[i].key, arr[i].val, enum_to_str(arr[i].itemtype));
+        int range = (int)((long)arr[i].val * bar_len / highest);
+        for (int j = 0; j < range; j++) {
+            printf("%c", bar[j]);
+        }
+        printf("\n");
+    }
+}
+
+void fprintf_top_n(Item* arr, int n, FILE *fptr){
+    char bar[] = "##################################################";
+    int highest = arr[0].val;
+    int bar_len = strlen(bar);
+    fprintf(fptr,"%-4s| %-15s | %-7s| %-8s | %s\n", "Rank", "Word", "Count", "Severity", "Graph");
+
+    fprintf(fptr,"----|-----------------|--------|----------|--------------------\n");
+    for (int i = 0; i < n; i++) {
+        fprintf(fptr,"%-3d | %-15s | %6d | %8s | ", i + 1, arr[i].key, arr[i].val, enum_to_str(arr[i].itemtype));
+        int range = (int)((long)arr[i].val * bar_len / highest);
+        for (int j = 0; j < range; j++) {
+            fprintf(fptr,"%c", bar[j]);
+        }
+        fprintf(fptr,"\n");
     }
 }
 

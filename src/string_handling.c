@@ -93,4 +93,3 @@ void print_stringstats() {
     printf("Ratio of mild unique to total toxic unique: %.2f\n", ratio_tm);
     printf("Ratio of severe unique to total toxic unique: %.2f\n", ratio_ts);
 }
-

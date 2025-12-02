@@ -193,11 +193,7 @@ void create_outfile() {
     Item* item_arr = get_top_n(&table, n);
 
     if (item_arr != NULL) {
-        for (int i = 0; i < n; i++) {
-            if (item_arr[i].val == 0 && strlen(item_arr[i].key) == 0) break;
-            fprintf(fptr, "%d. %s -> %d\n", i + 1, item_arr[i].key, item_arr[i].val);
-        }
-        free(item_arr);
+        fprintf_top_n(item_arr, n, fptr);
     }
     else {
         fprintf(fptr, "No toxic words found.\n");
