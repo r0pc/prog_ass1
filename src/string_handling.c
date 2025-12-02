@@ -8,7 +8,8 @@
 #include "hashtable.h"
 
 
-
+// normalizes the string s, (lower case + removing excessive spaces)
+// also removes stopwords
 void normalize_inplace(char* s) {
     char* src = s;
     char* dst = s;
@@ -30,7 +31,6 @@ void normalize_inplace(char* s) {
         else {
             if (word_len > 0) {
                 current_word[word_len] = '\0'; // Null terminate the temp word
-
                 if (!find_item(table1, current_word)) {
 
 
@@ -62,36 +62,7 @@ void normalize_inplace(char* s) {
     ss.word_count += words_processed;
 }
 
-// void normalize_inplace(char* s) {
-//     char* src = s;
-//     char* dst = s;
-
-//     int last_was_space = 1;
-//     int words = 0;
-
-//     while (*src) {
-//         unsigned char c = (unsigned char)*src;
-//         if (isspace(c)) {
-//             if (!last_was_space) {
-//                 *dst++ = ' ';
-//                 last_was_space = 1;
-//             }
-//         }
-//         else {
-//             *dst++ = tolower(c);
-//             if (last_was_space) words++;
-//             last_was_space = 0;
-//         }
-//         src++;
-//     }
-//     if (dst > s && dst[-1] == ' ')
-//         dst--;
-//     *dst = '\0';
-//     ss.total_length += dst - s;
-//     ss.word_count += words;
-// }
-
-
+// first normalizes the string then checks if substr exists in the trie
 void process_string(ACNode* automation, HashItem* table, char* s) {
     ss.num_records++;
     // printf("Orignal: %s\n", s);
@@ -100,6 +71,7 @@ void process_string(ACNode* automation, HashItem* table, char* s) {
     ac_search(automation, s, table);
 }
 
+// prints general file info
 void print_stringstats() {
     float avg_word_precord = (float)ss.word_count / ss.num_records;
     float avg_word_len = (float)ss.total_length / ss.word_count;

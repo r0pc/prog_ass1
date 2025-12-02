@@ -8,6 +8,7 @@
 #include "string_handling.h"
 #include "file_handling.h"
 
+// get file ptr
 FILE* get_file(int* filetype) {
     char buff[64];
     FILE* fptr;
@@ -34,6 +35,7 @@ FILE* get_file(int* filetype) {
     return fptr;
 }
 
+// checks if filetype is csv or txt
 int check_filetype(char* filename) {
     int len = strlen(filename);
     if (len >= 4) {
@@ -49,6 +51,7 @@ int check_filetype(char* filename) {
     return 0;
 }
 
+// reads txt file line by line
 void read_txt(FILE* fptr, ACNode* automation, HashItem* table) {
     char buffer[2056];
     while (fgets(buffer, sizeof(buffer), fptr)) {
@@ -56,7 +59,7 @@ void read_txt(FILE* fptr, ACNode* automation, HashItem* table) {
     }
 }
 
-
+// gets col from record
 char* csv_get_col(char* row, int target_col) {
     int col = 0;
     int inside_quotes = 0;
@@ -85,7 +88,7 @@ char* csv_get_col(char* row, int target_col) {
     return NULL;
 }
 
-
+// gets col input, then reads only that col
 void read_csv(FILE* fptr, ACNode* automation, HashItem* table) {
     char buffer[4096];
 
@@ -131,7 +134,7 @@ void read_csv(FILE* fptr, ACNode* automation, HashItem* table) {
 }
 
 
-
+// runs respective functions to read txt and csv
 void process_file(ACNode* automation, HashItem* table) {
     int filetype = 0;
     FILE* fptr = get_file(&filetype);

@@ -3,8 +3,13 @@
 #include <string.h>
 #include "hashtable.h"
 
+
+// https://troydhanson.github.io/uthash/userguide.html
+// hashtable implementation using uthash library
+
 StringStats ss = { 0 };
 
+// adds item if item doesnot exist in hashtable
 void add_item(HashItem** table, const char* key, int value, ItemType itemtype) {
     HashItem* item;
     HASH_FIND_STR(*table, key, item);
@@ -18,6 +23,7 @@ void add_item(HashItem** table, const char* key, int value, ItemType itemtype) {
     item->itemtype = itemtype;
 }
 
+// finds a item in the table
 int find_item(HashItem* table, const char* key) {
     HashItem* item;
     HASH_FIND_STR(table, key, item);
@@ -25,6 +31,7 @@ int find_item(HashItem* table, const char* key) {
     return 0;
 }
 
+// deletes an item in the table
 void delete_item(HashItem** table, const char* key) {
     HashItem* item;
     HASH_FIND_STR(*table, key, item);
@@ -35,6 +42,7 @@ void delete_item(HashItem** table, const char* key) {
     }
 }
 
+// frees all items in the table
 void free_table(HashItem** table) {
     HashItem* cur, * tmp;
     HASH_ITER(hh, *table, cur, tmp) {
@@ -43,6 +51,7 @@ void free_table(HashItem** table) {
     }
 }
 
+// checks if item exists in the table, if it does inc its val
 int increment_item(HashItem* table, const char* key) {
     HashItem* item;
     HASH_FIND_STR(table, key, item);
@@ -59,6 +68,7 @@ int increment_item(HashItem* table, const char* key) {
     return 0;
 }
 
+// prints the table for debugging
 void print_table(HashItem* table) {
     HashItem* item, * tmp;
     HASH_ITER(hh, table, item, tmp) {
@@ -66,6 +76,7 @@ void print_table(HashItem* table) {
     }
 }
 
+// gets total of the table
 int get_total_table(HashItem* table) {
     int total = 0;
     HashItem* item, * tmp;
@@ -75,6 +86,7 @@ int get_total_table(HashItem* table) {
     return total;
 }
 
+// resets all vals in the table to 0
 void reset_table(HashItem* table) {
     HashItem* tmp, * item;
     HASH_ITER(hh, table, item, tmp) {
@@ -82,10 +94,12 @@ void reset_table(HashItem* table) {
     }
 }
 
+// used by uthash mergesort algorithm to sort in desc order
 int sort_val_desc(HashItem* a, HashItem* b) {
     return b->value - a->value;
 }
 
+// returns string for respective enum val
 char* enum_to_str(ItemType itemtype) {
     if (itemtype == SEVERE) return "Severe";
     if (itemtype == MILD) return "Mild";
@@ -93,6 +107,7 @@ char* enum_to_str(ItemType itemtype) {
     return "err";
 }
 
+// asks user for input n, returns an arr of size n of top items
 Item* get_top_n(HashItem** table, int n) {
     if (*table == NULL) {
         printf("table is empty\n");
@@ -115,34 +130,15 @@ Item* get_top_n(HashItem** table, int n) {
     return arr;
 }
 
-// Item *get_top_n_grouped(HashItem **table, int n){
-//     if(*table == NULL){
-//         printf("table is empty\n");
-//         return NULL;
-//     }
-
-//     Item *arr = (Item*)malloc(sizeof(Item) * n * 2);
-//     HASH_SORT(*table, sort_val_desc);
-//     HashItem *item = *table;
-//     int i = 0;
-//     int c1 = 0;
-//     int c2 = n;
-
-//     while(item != NULL || (c1<n && c2<n*2)){
-//         if(item->itemtype == SEVERE){
-//             strcpy(arr[c1].key, item->key);
-//             arr[c1] = 
-//         }
-//     }
-
-// }
-
+// prints top n
 void print_top_n(Item* arr, int n) {
     for (int i = 0; i < n; i++) {
         printf("%d. %s -> %d -> %s\n", i + 1, arr[i].key, arr[i].val, enum_to_str(arr[i].itemtype));
     }
 }
 
+
+// old substring checking function O(n^2) -- slow
 void check_substr_inc(HashItem* table, const char* str) {
     HashItem* item, * tmp;
     size_t len = strlen(str);
@@ -159,6 +155,8 @@ void check_substr_inc(HashItem* table, const char* str) {
     }
 }
 
+
+// gets number of elements contained in a table
 int get_num_elements(HashItem* table) {
     HashItem* item, * tmp;
     int c = 0;
@@ -168,6 +166,7 @@ int get_num_elements(HashItem* table) {
     return c;
 }
 
+// gets number of elements in a table with val > 0
 int get_num_unique_gtz(HashItem* table) {
     HashItem* item, * tmp;
     int c = 0;
@@ -178,6 +177,8 @@ int get_num_unique_gtz(HashItem* table) {
     }
     return c;
 }
+
+// gets number of elements in a table with val > 0 according to enum type, for toxic words table
 void num_unique_gtz_grp(HashItem* table) {
     HashItem* item, * tmp;
     int c = 0;

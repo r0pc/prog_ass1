@@ -13,7 +13,6 @@
 // fail ptr used to create fail links for algo
 // int output_f is used as a boolean to check whether this node has a value on it when freeing
 // output is the string used as key in hashmap
-
 typedef struct ACNode {
     struct ACNode* next[ALPHABET];
     struct ACNode* fail;
@@ -21,6 +20,7 @@ typedef struct ACNode {
     int output_f;
 } ACNode;
 
+// ENUMS
 typedef enum {
     NONE,
     MILD,
@@ -30,6 +30,7 @@ typedef enum {
     UNIQUE
 }ItemType;
 
+// element of hashmap
 typedef struct {
     char key[256];
     int value;
@@ -37,12 +38,15 @@ typedef struct {
     UT_hash_handle hh;
 } HashItem;
 
+// used to get top n
 typedef struct {
     int val;
     char key[256];
     ItemType itemtype;
 }Item;
 
+
+// stringstats, stores general info about file
 typedef struct {
     int word_count;
     int total_length;

@@ -4,6 +4,7 @@
 #include "toxic_loading.h"
 #include "hashtable.h"
 
+// takes a filename, opens it and adds each line to the respective hashtable, removes trailing \n
 void load_toxic(HashItem** table, const char* filename) {
     FILE* fptr = fopen(filename, "r");
     if (!fptr) {
@@ -22,6 +23,7 @@ void load_toxic(HashItem** table, const char* filename) {
     }
 }
 
+// gets enum val for respective file
 ItemType get_itemtype(const char* filename) {
     ItemType itemtype = NONE;
     if (strcmp(filename, "data/mild_words.txt") == 0) {

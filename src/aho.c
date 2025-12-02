@@ -4,11 +4,15 @@
 #include "aho.h"
 #include "hashtable.h"
 
+
+// uses calloc to create a node
 ACNode* ac_create_node() {
     ACNode* node = calloc(1, sizeof(ACNode));
     return node;
 }
 
+
+// inserts a node to the trie
 static void ac_insert(ACNode* root, const char* word) {
     ACNode* p = root;
     for (const unsigned char* c = (unsigned char*)word; *c; c++) {
@@ -20,7 +24,10 @@ static void ac_insert(ACNode* root, const char* word) {
     p->output_f = 1;
 }
 
+
+
 // black magic
+// builds fail links for nodes in the trie
 static void ac_build_fail_links(ACNode* root) {
     ACNode** queue = malloc(200000 * sizeof(ACNode*));
     int head = 0, tail = 0;
@@ -54,6 +61,8 @@ static void ac_build_fail_links(ACNode* root) {
     free(queue);
 }
 
+
+// builds trie data structure
 ACNode* ac_build(HashItem* table) {
     ACNode* root = ac_create_node();
     HashItem* it, * tmp;
@@ -66,6 +75,7 @@ ACNode* ac_build(HashItem* table) {
     return root;
 }
 
+// checks if substring is in trie, if found call increate_item function to increment_item by using node output as key
 void ac_search(ACNode* root, const char* text, HashItem* table) {
     ACNode* p = root;
 
@@ -82,6 +92,7 @@ void ac_search(ACNode* root, const char* text, HashItem* table) {
     }
 }
 
+// frees each node in trie
 void ac_free(ACNode* root) {
     if (!root) return;
 
