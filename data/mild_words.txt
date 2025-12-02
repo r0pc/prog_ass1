@@ -1,5 +1,5 @@
-2-faced
-2-faces
+2 faced
+2 faces
 abnormal
 abolish
 abominable
@@ -15,7 +15,7 @@ abrupt
 abruptly
 abscond
 absence
-absent-minded
+absent minded
 absentee
 absurd
 absurdity
@@ -142,15 +142,15 @@ antagonism
 antagonist
 antagonistic
 antagonize
-anti-
-anti-american
-anti-israeli
-anti-occupation
-anti-proliferation
-anti-semites
-anti-social
-anti-us
-anti-white
+anti 
+anti american
+anti israeli
+anti occupation
+anti proliferation
+anti semites
+anti social
+anti us
+anti white
 antipathy
 antiquated
 antithetical
@@ -228,9 +228,9 @@ awkward
 awkwardness
 ax
 babble
-back-logged
-back-wood
-back-woods
+back logged
+back wood
+back woods
 backache
 backaches
 backaching
@@ -325,7 +325,7 @@ biased
 biases
 bicker
 bickering
-bid-rigging
+bid rigging
 bigotries
 bigotry
 bitch
@@ -422,8 +422,8 @@ brazenly
 brazenness
 breach
 break
-break-up
-break-ups
+break up
+break ups
 breakdown
 breaking
 breaks
@@ -435,7 +435,7 @@ bristle
 brittle
 broke
 broken
-broken-hearted
+broken hearted
 brood
 browbeat
 bruise
@@ -463,7 +463,7 @@ bulkiness
 bulky
 bulkyness
 bull****
-bull----
+bull    
 bullies
 bullshit
 bullshyt
@@ -522,7 +522,7 @@ caricature
 carnage
 carp
 cartoonish
-cash-strapped
+cash strapped
 castigate
 castrated
 casualty
@@ -706,7 +706,7 @@ corrupts
 corruptted
 costlier
 costly
-counter-productive
+counter productive
 counterproductive
 coupists
 covetous
@@ -1056,7 +1056,7 @@ dick
 dictator
 dictatorial
 die
-die-hard
+die hard
 died
 dies
 difficult
@@ -1065,7 +1065,7 @@ difficulty
 diffidence
 dilapidated
 dilemma
-dilly-dally
+dilly dally
 dim
 dimmer
 din
@@ -1388,8 +1388,8 @@ drips
 drones
 droop
 droops
-drop-out
-drop-outs
+drop out
+drop outs
 dropout
 dropouts
 drought
@@ -1429,7 +1429,7 @@ egotistical
 egotistically
 egregious
 egregiously
-election-rigger
+election rigger
 elimination
 emaciated
 emasculate
@@ -1586,10 +1586,10 @@ fanatically
 fanaticism
 fanatics
 fanciful
-far-fetched
+far fetched
 farce
 farcical
-farcical-yet-provocative
+farcical yet provocative
 farcically
 farfetched
 fascism
@@ -1598,8 +1598,8 @@ fastidious
 fastidiously
 fastuous
 fat
-fat-cat
-fat-cats
+fat cat
+fat cats
 fatal
 fatalistic
 fatalistically
@@ -1677,7 +1677,7 @@ flare
 flares
 flareup
 flareups
-flat-out
+flat out
 flaunt
 flaw
 flawed
@@ -1784,7 +1784,7 @@ frustration
 frustrations
 fudge
 fugitive
-full-blown
+full blown
 fulminate
 fumble
 fume
@@ -1825,7 +1825,7 @@ gawk
 gawky
 geezer
 genocide
-get-rich
+get rich
 ghastly
 ghetto
 ghosting
@@ -1853,7 +1853,7 @@ glut
 gnawing
 goad
 goading
-god-awful
+god awful
 goof
 goofy
 goon
@@ -1935,9 +1935,9 @@ harassment
 harboring
 harbors
 hard
-hard-hit
-hard-line
-hard-liner
+hard hit
+hard line
+hard liner
 hardball
 harden
 hardened
@@ -1982,7 +1982,7 @@ hazard
 hazardous
 haze
 hazy
-head-aches
+head aches
 headache
 headaches
 heartbreaker
@@ -1990,7 +1990,7 @@ heartbreaking
 heartbreakingly
 heartless
 heathen
-heavy-handed
+heavy handed
 heavyhearted
 heck
 heckle
@@ -2006,7 +2006,7 @@ hegemonistic
 hegemony
 heinous
 hell
-hell-bent
+hell bent
 hellion
 hells
 helpless
@@ -2020,14 +2020,14 @@ hestitant
 hideous
 hideously
 hideousness
-high-priced
+high priced
 hiliarious
 hinder
 hindrance
 hiss
 hissed
 hissing
-ho-hum
+ho hum
 hoard
 hoax
 hobble
@@ -2099,21 +2099,21 @@ ignominy
 ignorance
 ignorant
 ignore
-ill-advised
-ill-conceived
-ill-defined
-ill-designed
-ill-fated
-ill-favored
-ill-formed
-ill-mannered
-ill-natured
-ill-sorted
-ill-tempered
-ill-treated
-ill-treatment
-ill-usage
-ill-used
+ill advised
+ill conceived
+ill defined
+ill designed
+ill fated
+ill favored
+ill formed
+ill mannered
+ill natured
+ill sorted
+ill tempered
+ill treated
+ill treatment
+ill usage
+ill used
 illegal
 illegally
 illegitimate
@@ -2593,7 +2593,7 @@ jerky
 jitter
 jitters
 jittery
-job-killing
+job killing
 jobless
 joke
 joker
@@ -2630,11 +2630,11 @@ lagged
 lagging
 laggy
 lags
-laid-off
+laid off
 lambast
 lambaste
 lame
-lame-duck
+lame duck
 lament
 lamentable
 lamentably
@@ -2648,7 +2648,7 @@ lapse
 lapsed
 lapses
 lascivious
-last-ditch
+last ditch
 latency
 laughable
 laughably
@@ -2658,7 +2658,7 @@ lawbreaking
 lawless
 lawlessness
 layoff
-layoff-happy
+layoff happy
 lazy
 leak
 leakage
@@ -2673,11 +2673,11 @@ lechery
 leech
 leer
 leery
-left-leaning
+left leaning
 lemon
 lengthy
-less-developed
-lesser-known
+less developed
+lesser known
 letch
 lethal
 lethargic
@@ -2696,7 +2696,7 @@ lie
 lied
 lier
 lies
-life-threatening
+life threatening
 lifeless
 limit
 limitation
@@ -2706,7 +2706,7 @@ limits
 limp
 listless
 litigious
-little-known
+little known
 livid
 lividly
 loath
@@ -2720,8 +2720,8 @@ loneliness
 lonely
 loner
 lonesome
-long-time
-long-winded
+long time
+long winded
 longing
 longingly
 loophole
@@ -2742,7 +2742,7 @@ louder
 lousy
 loveless
 lovelorn
-low-rated
+low rated
 lowly
 ludicrous
 ludicrously
@@ -2801,7 +2801,7 @@ mar
 marginal
 marginally
 martyrdom
-martyrdom-seeking
+martyrdom seeking
 mashed
 massacre
 massacres
@@ -2958,11 +2958,11 @@ muddy
 mudslinger
 mudslinging
 mulish
-multi-polarization
+multi polarization
 mundane
 murderously
 murky
-muscle-flexing
+muscle flexing
 mushy
 musty
 mysterious
@@ -3020,7 +3020,7 @@ noise
 noises
 noisier
 noisy
-non-confidence
+non confidence
 nonexistent
 nonresponsive
 nonsense
@@ -3088,7 +3088,7 @@ ominous
 ominously
 omission
 omit
-one-sided
+one sided
 onerous
 onerously
 onslaught
@@ -3121,12 +3121,12 @@ outrageously
 outrageousness
 outrages
 outsider
-over-acted
-over-awe
-over-balanced
-over-hyped
-over-priced
-over-valuation
+over acted
+over awe
+over balanced
+over hyped
+over priced
+over valuation
 overact
 overacted
 overawe
@@ -3577,7 +3577,7 @@ rigidness
 rile
 riled
 rip
-rip-off
+rip off
 ripoff
 ripped
 risk
@@ -3608,7 +3608,7 @@ rumor
 rumors
 rumours
 rumple
-run-down
+run down
 runaway
 rupture
 rust
@@ -3699,34 +3699,34 @@ scratches
 scratchy
 scream
 screech
-screw-up
+screw up
 screwed
-screwed-up
+screwed up
 screwy
 scuff
 scuffs
 scum
 scummy
-second-class
-second-tier
+second class
+second tier
 secretive
 sedentary
 seedy
 seethe
 seething
-self-coup
-self-criticism
-self-defeating
-self-destructive
-self-humiliation
-self-interest
-self-interested
-self-serving
+self coup
+self criticism
+self defeating
+self destructive
+self humiliation
+self interest
+self interested
+self serving
 selfinterested
 selfish
 selfishly
 selfishness
-semi-retarded
+semi retarded
 senile
 sensationalize
 senseless
@@ -3734,7 +3734,7 @@ senselessly
 seriousness
 sermonize
 servitude
-set-up
+set up
 setback
 setbacks
 sever
@@ -3773,7 +3773,7 @@ shocked
 shocking
 shockingly
 shoddy
-short-lived
+short lived
 shortage
 shortchange
 shortcoming
@@ -3850,7 +3850,7 @@ sloppy
 sloth
 slothful
 slow
-slow-moving
+slow moving
 slowed
 slower
 slowest
@@ -3915,7 +3915,7 @@ snobby
 snobish
 snobs
 snub
-so-cal
+so cal
 soapy
 sob
 sober
@@ -3960,8 +3960,8 @@ spookier
 spookiest
 spookily
 spooky
-spoon-fed
-spoon-feed
+spoon fed
+spoon feed
 spoonfed
 sporadic
 spotty
@@ -4090,7 +4090,7 @@ stuttering
 stutters
 sty
 stymied
-sub-par
+sub par
 subdued
 subjected
 subjection
@@ -4125,8 +4125,8 @@ sufferers
 suffering
 suffers
 suffocate
-sugar-coat
-sugar-coated
+sugar coat
+sugar coated
 sugarcoated
 suicidal
 suicide
@@ -4207,7 +4207,7 @@ terrible
 terribleness
 terribly
 terror
-terror-genic
+terror genic
 terrorism
 terrorize
 testily
@@ -4233,15 +4233,15 @@ throbbing
 throbs
 throttle
 thug
-thumb-down
-thumbs-down
+thumb down
+thumbs down
 thwart
-time-consuming
+time consuming
 timid
 timidity
 timidly
 timidness
-tin-y
+tin y
 tingled
 tingling
 tired
@@ -4250,7 +4250,7 @@ tiring
 tiringly
 toil
 toll
-top-heavy
+top heavy
 topple
 torment
 tormented
@@ -4322,8 +4322,8 @@ turmoil
 twist
 twisted
 twists
-two-faced
-two-faces
+two faced
+two faces
 tyrannical
 tyrannically
 tyranny
@@ -4336,8 +4336,8 @@ ugly
 ulterior
 ultimatum
 ultimatums
-ultra-hardline
-un-viewable
+ultra hardline
+un viewable
 unable
 unacceptable
 unacceptablely
@@ -4652,7 +4652,7 @@ wallow
 wane
 waning
 wanton
-war-like
+war like
 warily
 wariness
 warlike
@@ -4661,14 +4661,14 @@ warning
 warp
 warped
 wary
-washed-out
+washed out
 waste
 wasted
 wasteful
 wastefulness
 wasting
-water-down
-watered-down
+water down
+watered down
 wayward
 weak
 weaken
