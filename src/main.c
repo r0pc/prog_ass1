@@ -136,7 +136,7 @@ int get_choice1() {
 
 // get number of record for outputting to file
 int get_next_record_num() {
-    FILE* f = fopen("output.txt", "r");
+    FILE* f = fopen("analysis_report.txt", "r");
     if (!f) return 1; 
 
     int count = 0;
@@ -151,12 +151,12 @@ int get_next_record_num() {
 }
 
 
-// appends to output.txt the current analysis of the file,
+// appends to analysis_report.txt the current analysis of the file,
 // outputs the file name, general stats (string stats) and top 10 toxic words found
 void create_outfile() {
     int record_num = get_next_record_num();
 
-    FILE* fptr = fopen("output.txt", "a");
+    FILE* fptr = fopen("analysis_report.txt", "a");
     if (!fptr) {
         printf("Error opening output file for appending\n");
         return;
@@ -205,7 +205,7 @@ void create_outfile() {
 
     fprintf(fptr, "\n================================================\n\n");
 
-    printf("Successfully appended Record %d to output.txt\n\n", record_num);
+    printf("Successfully appended Record %d to analysis_report.txt\n\n", record_num);
     fclose(fptr);
 }
 
@@ -213,7 +213,7 @@ void create_outfile() {
 // if input == 0 then analyse a new file
 // if input == 1 then output general stats
 // if input == 2 then output top n]
-// if input == 3 then append to output.txt 
+// if input == 3 then append to analysis_report.txt 
 void get_choice2() {
     int c2 = -1;
     printf("\n0. Analyse a new file\n");
