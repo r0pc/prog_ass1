@@ -57,7 +57,7 @@ int main() {
 
         // reset all items in dictionary table to 0
         reset_table(table);
-        
+
         // free all items in dictionary table2
         free_table(&table2);
 
@@ -107,9 +107,16 @@ void out_general() {
 // sorts dictionary, outputs top n
 void out_top_n() {
     int n;
-    printf("Input n: ");
-    scanf("%d", &n);
-    getchar();
+    while (1) {
+        printf("Input n: ");
+        scanf("%d", &n);
+        getchar();
+        int len = get_num_elements(table);
+        if (n > 0 && n <= len) {
+            break;
+        }
+        printf("invalid input for n, n > 0 and n <= length of hashmap\n");
+    }
     Item* item_arr = get_top_n(&table, n);
     printf("Top n Toxic Words:\n");
     print_top_n(item_arr, n);
@@ -137,7 +144,7 @@ int get_choice1() {
 // get number of record for outputting to file
 int get_next_record_num() {
     FILE* f = fopen("analysis_report.txt", "r");
-    if (!f) return 1; 
+    if (!f) return 1;
 
     int count = 0;
     char line[512];

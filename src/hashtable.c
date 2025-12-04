@@ -16,6 +16,11 @@ void add_item(HashItem** table, const char* key, int value, ItemType itemtype) {
 
     if (!item) {
         item = malloc(sizeof(HashItem));
+        if(!item){
+            printf("Malloc failed while creating item for hashmap\n");
+            printf("Aborting Program\n");
+            exit(EXIT_FAILURE);
+        }
         strcpy(item->key, key);
         HASH_ADD_STR(*table, key, item);
     }
@@ -115,6 +120,11 @@ Item* get_top_n(HashItem** table, int n) {
     }
 
     Item* arr = (Item*)malloc(sizeof(Item) * n);
+    if(!arr){
+        printf("Malloc failed while building top_n item arr\n");
+        printf("Aborting program...\n");
+        exit(EXIT_FAILURE);
+    }
     HASH_SORT(*table, sort_val_desc);
     HashItem* item = *table;
     int i = 0;

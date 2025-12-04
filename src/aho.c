@@ -8,6 +8,11 @@
 // uses calloc to create a node
 ACNode* ac_create_node() {
     ACNode* node = calloc(1, sizeof(ACNode));
+    if(!node){
+        printf("Calloc failed while creating node for trie\n");
+        printf("Aborting Program...\n");
+        exit(EXIT_FAILURE);
+    }
     return node;
 }
 
@@ -30,6 +35,12 @@ static void ac_insert(ACNode* root, const char* word) {
 // builds fail links for nodes in the trie
 static void ac_build_fail_links(ACNode* root) {
     ACNode** queue = malloc(200000 * sizeof(ACNode*));
+    if(!queue){
+        printf("Malloc failed while creating queue\n");
+        printf("Aborting Program...\n");
+        exit(EXIT_FAILURE);
+    }
+
     int head = 0, tail = 0;
 
     root->fail = root;
@@ -97,6 +108,11 @@ void ac_free(ACNode* root) {
     if (!root) return;
 
     ACNode** queue = malloc(200000 * sizeof(ACNode*));
+    if(!queue){
+        printf("Malloc failed while creating queue\n");
+        printf("Aborting program\n");
+        exit(EXIT_FAILURE);
+    }
     int head = 0, tail = 0;
 
     queue[tail++] = root;
