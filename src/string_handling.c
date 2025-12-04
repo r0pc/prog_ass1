@@ -20,6 +20,9 @@ void normalize_inplace(char* s) {
     int words_processed = 0;
     int first_word_written = 0;
 
+    // flag for substrings like ... or !!!!
+    int last_char = 0;
+
     while (1) {
         unsigned char c = (unsigned char)*src;
 
@@ -29,6 +32,15 @@ void normalize_inplace(char* s) {
             }
         }
         else {
+            if(c == '.' || c == '!' || c == '?'){
+                if(!last_char){
+                    ss.num_sentences++;
+                    last_char = 1;
+                } else{
+                    last_char = 0;
+                }
+            }
+
             if (word_len > 0) {
                 current_word[word_len] = '\0'; // Null terminate the temp word
                 if (!find_item(table1, current_word)) {
@@ -82,6 +94,7 @@ void print_stringstats() {
     printf("Total Number of Words(excluding stopwords): %d\n", ss.word_count);
     printf("Total Number of Characters(excluding stopwords): %d\n", ss.total_length);
     printf("Total Number of unique words(excluding stopwords): %d\n", ss.num_unique);
+    printf("Total Number of Sentences: %d\n", ss.num_sentences);
     printf("Ratio of total words with unique words: %.3f\n", ratio_w);
     printf("Average word length: %.2f\n", avg_word_len);
     printf("Average Number of words per record: %.2f\n", avg_word_precord);

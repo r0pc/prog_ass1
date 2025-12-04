@@ -182,6 +182,7 @@ void create_outfile() {
     fprintf(fptr, "Total Number of Words(excluding stopwords): %d\n", ss.word_count);
     fprintf(fptr, "Total Number of Characters(excluding stopwords): %d\n", ss.total_length);
     fprintf(fptr, "Total Number of unique words(excluding stopwords): %d\n", ss.num_unique);
+    fprintf(fptr, "Total Number of Sentences: %d\n", ss.num_sentences);
     fprintf(fptr, "Ratio of total words with unique words: %.3f\n", ratio_w);
     fprintf(fptr, "Average word length: %.2f\n", avg_word_len);
     fprintf(fptr, "Average Number of words per record: %.2f\n", avg_word_precord);

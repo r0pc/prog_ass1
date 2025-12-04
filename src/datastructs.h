@@ -57,6 +57,7 @@ typedef struct {
     int mild_unique;
     int severe_unique;
     int num_records;
+    int num_sentences;
     char filename[256];
 } StringStats;
 
