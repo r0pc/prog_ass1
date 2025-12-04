@@ -107,11 +107,11 @@ void out_general() {
 // sorts dictionary, outputs top n
 void out_top_n() {
     int n;
+    int len = get_num_elements(table);
     while (1) {
         printf("Input n: ");
         scanf("%d", &n);
         getchar();
-        int len = get_num_elements(table);
         if (n > 0 && n <= len) {
             break;
         }
@@ -119,6 +119,24 @@ void out_top_n() {
     }
     Item* item_arr = get_top_n(&table, n);
     printf("Top n Toxic Words:\n");
+    print_top_n(item_arr, n);
+    printf("\n");
+}
+
+void out_top_n_unique() {
+    int n;
+    int len = ss.num_unique;
+    while (1) {
+        printf("Input n: ");
+        scanf("%d", &n);
+        getchar();
+        if (n > 0 && n <= len) {
+            break;
+        }
+        printf("invalid input for n, n > 0 and n <= length of hashmap\n");
+    }
+    Item* item_arr = get_top_n(&table2, n);
+    printf("Top n Unique Words:\n");
     print_top_n(item_arr, n);
     printf("\n");
 }
@@ -178,7 +196,7 @@ void create_outfile() {
     float ratio_ts = (float)ss.severe_unique / ss.toxic_unique;
     float ratio_tm = (float)ss.mild_unique / ss.toxic_unique;
 
-    fprintf(fptr, "StringStats:\n");
+    fprintf(fptr, "General Statistics:\n");
     fprintf(fptr, "Total Number of Words(excluding stopwords): %d\n", ss.word_count);
     fprintf(fptr, "Total Number of Characters(excluding stopwords): %d\n", ss.total_length);
     fprintf(fptr, "Total Number of unique words(excluding stopwords): %d\n", ss.num_unique);
@@ -206,12 +224,25 @@ void create_outfile() {
     else {
         fprintf(fptr, "No toxic words found.\n");
     }
+    fprintf(fptr, "\n");
+
+    if (ss.num_unique >= 10) {
+        fprintf(fptr, "Top 10 Unique Words:\n");
+        Item* item_arr = get_top_n(&table2, n);
+        fprintf_top_n(item_arr, n, fptr);
+    }
+    else {
+        fprintf(fptr, "Not Enough Unique Words to Create a Top 10\n");
+    }
+
 
     fprintf(fptr, "\n================================================\n\n");
 
     printf("Successfully appended Record %d to analysis_report.txt\n\n", record_num);
     fclose(fptr);
 }
+
+
 
 // get input from user
 // if input == 0 then analyse a new file
@@ -220,18 +251,27 @@ void create_outfile() {
 // if input == 3 then append to analysis_report.txt 
 void get_choice2() {
     int c2 = -1;
-    printf("\n0. Analyse a new file\n");
-    printf("1. Display general word statistics\n");
-    printf("2. Display top n toxic words\n");
-    printf("3. Create an output file\n");
     while (1) {
-        printf("Enter Choice: ");
-        scanf("%d", &c2);
-        getchar();
+        printf("\n0. Analyse a new file\n");
+        printf("1. Display general word statistics\n");
+        printf("2. Display top n toxic words\n");
+        printf("3. Display top n unique words\n");
+        printf("4. Create an output file\n");
+        while(1){
+            printf("Enter Choice: ");
+            scanf("%d", &c2);
+            getchar();
+            if(c2>= 0 && c2 <= 4){
+                break;
+            }
+            printf("invalid choice, try again\n");
+        }
+
         if (c2 == 0) {
             printf("\n");
             break;
         }
+
         switch (c2)
         {
         case 1:
@@ -241,6 +281,9 @@ void get_choice2() {
             out_top_n();
             break;
         case 3:
+            out_top_n_unique();
+            break;
+        case 4:
             create_outfile();
             break;
         default:

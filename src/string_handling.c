@@ -57,8 +57,9 @@ void normalize_inplace(char* s) {
 
                     first_word_written = 1;
                     words_processed++;
-
-                    add_item(&table2, current_word, 0, UNIQUE);
+                    if(!increment_item(table2, current_word)){
+                        add_item(&table2, current_word, 1, UNIQUE);
+                    }
                 }
 
                 word_len = 0;
